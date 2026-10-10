@@ -1,0 +1,10 @@
+name: hello world!
+
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello-inline-bash:
+    run-on: ubuntu-latest
+    steps:
+      run: echo "hello world!"
