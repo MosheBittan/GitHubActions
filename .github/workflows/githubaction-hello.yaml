@@ -1,4 +1,4 @@
-name: hello world!                    # Workflow: what it's called
+name: first action - hello world!                    # Workflow: what it's called
 on:                                   # Workflow: what triggers it (the GitHub Event)
   workflow_dispatch:
 jobs:                                 # Workflow contains jobs
