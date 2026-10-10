@@ -1,10 +1,8 @@
-name: hello world!
-
-on:
+name: hello world!                    # Workflow: what it's called
+on:                                   # Workflow: what triggers it (the GitHub Event)
   workflow_dispatch:
-
-jobs:
-  say-hello-inline-bash:
-    runs-on: ubuntu-latest
-    steps:
-     - run: echo "hello world!"
+jobs:                                 # Workflow contains jobs
+  say-hello-inline-bash:              #   Job: you name it
+    runs-on: ubuntu-latest            #   Job: where it runs (the machine)
+    steps:                            #   Job contains steps
+     - run: echo "hello world!"       #     Step: what to do
