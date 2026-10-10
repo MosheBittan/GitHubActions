@@ -1,4 +1,4 @@
-name: first action - hello world!                    # Workflow: what it's called
+name: hello world!                    # Workflow: what it's called
 on:                                   # Workflow: what triggers it (the GitHub Event)
   workflow_dispatch:
 jobs:                                 # Workflow contains jobs
@@ -6,3 +6,8 @@ jobs:                                 # Workflow contains jobs
     runs-on: ubuntu-latest            #   Job: where it runs (the machine)
     steps:                            #   Job contains steps
      - run: echo "hello world!"       #     Step: what to do
+  say-hello-python:
+    runs-on: ubuntu-latest
+    steps:
+     - run: print("hello world from python!")
+       shell: python
