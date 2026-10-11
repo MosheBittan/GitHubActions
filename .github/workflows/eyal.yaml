@@ -5,6 +5,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-
+    env:
+      APP_ENV: production
+      
     steps:
-      - run: echo "Deploying to production"
+      - run: echo $APP_ENV
