@@ -4,5 +4,7 @@ on:
 
 jobs:
   first:
-    steps:
-     - run echo "moshe"
+  runs-on: ubuntu-latest
+
+  steps:
+     - run: echo "moshe"
