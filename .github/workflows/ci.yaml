@@ -1,6 +1,6 @@
 name: ci
 on:
-  push_dispatch:
+  push:
 
 jobs:
   first:
