@@ -3,8 +3,20 @@ on:
   push:
 
 jobs:
-  first:
+  login-docker:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "moshe"
+      - run: echo "login-docker"
+
+  build-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "build-docker"
+
+  push-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "push-docker"
