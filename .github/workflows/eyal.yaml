@@ -1,0 +1,10 @@
+name: eyal                   # Workflow: what it's called
+on:                                   # Workflow: what triggers it (the GitHub Event)
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - run: echo "Deploying to production"
