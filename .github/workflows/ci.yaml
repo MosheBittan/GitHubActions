@@ -1,0 +1,8 @@
+name: ci
+on:
+  push_dispatch:
+
+jobs:
+  first:
+    steps:
+     - run echo "moshe"
