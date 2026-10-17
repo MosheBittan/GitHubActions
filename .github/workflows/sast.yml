@@ -1,0 +1,32 @@
+name: SAST (Bandit + Semgrep)
+
+# סריקת הקוד המקורי בכל push/PR עם שני כלי SAST קלים.
+# רצים בשלב ה-commit/PR — shift-left, לפני כל build של image.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  bandit:
+    name: Bandit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install bandit
+      # -r רקורסיבי; ||true כדי שהלאבים הפגיעים-בכוונה לא יפילו את ה-pipeline כאן
+      - run: bandit -r . || true
+
+  semgrep:
+    name: Semgrep
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - run: semgrep --config=auto --error || true
